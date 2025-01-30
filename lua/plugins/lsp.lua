@@ -22,7 +22,6 @@ return {
                     "stylua",    -- Add this
                     "black",     -- Add this
                 },
-                automatic_installation = true,
             })
 
             local lspconfig = require("lspconfig")
