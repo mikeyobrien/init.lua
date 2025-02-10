@@ -11,12 +11,7 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			require("mason").setup()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"pyright",
-				},
-			})
+			require("mason-lspconfig").setup({})
 
 			local lspconfig = require("lspconfig")
 
@@ -60,6 +55,9 @@ return {
 
 			-- Configure other language servers
 			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.nil_ls.setup({
 				capabilities = capabilities,
 			})
 		end,
