@@ -30,7 +30,7 @@ return {
 						icon_hl = "Title",
 						desc = "Recent Files",
 						desc_hl = "String",
-						key = "<leader>?",
+						key = "<leader>pe",
 						key_hl = "Number",
 						action = "Telescope oldfiles",
 					},

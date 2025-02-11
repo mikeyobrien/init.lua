@@ -25,12 +25,16 @@ return {
 				require("conform").format({ async = true, lsp_fallback = true })
 			end, { desc = "Format buffer" })
 
-			-- Add conform setup
 			require("conform").setup({
+				formatters = {
+					stylua = {
+						-- necessary since come machines don't have access to glibc 2.28
+						command = vim.fn.exapand("~/.nix-profile/bin/stylua"),
+					},
+				},
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "black" },
-					-- Add more formatters as needed
 				},
 				format_on_save = {
 					timeout_ms = 500,
