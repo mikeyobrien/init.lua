@@ -29,6 +29,13 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
+vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Vertical split" })
+vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "Horizontal split" })
+vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Move to left split" })
+vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Move to lower split" })
+vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Move to upper split" })
+vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Move to right split" })
+
 -- options
 
 vim.opt.relativenumber = true
