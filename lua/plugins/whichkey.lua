@@ -16,19 +16,26 @@ return {
         border = "single",
       },
     },
-    config = function(_, opts)
+    config = function()
       local wk = require("which-key")
 
-      -- Setup which-key with the opts
-      wk.setup(opts)
+      wk.setup({
+        plugins = {
+          marks = true,
+          registers = true,
+          spelling = { enabled = true },
+        },
+        window = {
+          border = "single",
+        },
+        triggers = "auto", -- Enable automatic triggering
+      })
 
-      -- Define your keybindings here
+      -- Only register mappings that aren't handled elsewhere
       wk.register({
         ["<leader>"] = {
-          f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- Example mapping
-          g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-          h = { "<cmd>nohlsearch<cr>", "No Highlight" }, -- Clear search highlights
-          u = { "<cmd>UndotreeToggle<cr>", "Undo Tree" }, -- Toggle undotree
+          h = { "<cmd>nohlsearch<cr>", "No Highlight" },
+          u = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
         },
       })
     end,
