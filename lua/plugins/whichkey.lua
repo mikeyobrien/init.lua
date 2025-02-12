@@ -2,20 +2,25 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy", -- Load the plugin lazily
-    config = function()
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      plugins = {
+        marks = true,
+        registers = true,
+        spelling = { enabled = true },
+      },
+      window = {
+        border = "single",
+      },
+    },
+    config = function(_, opts)
       local wk = require("which-key")
 
-      -- Basic setup for which-key
-      wk.setup({
-        plugins = {
-          marks = true, -- Enable marks (e.g., `m` mappings)
-          registers = true, -- Enable register mappings
-          spelling = { enabled = true }, -- Enable spelling suggestions
-        },
-        window = {
-          border = "single", -- Add a border to the which-key window
-        },
-      })
+      -- Setup which-key with the opts
+      wk.setup(opts)
 
       -- Define your keybindings here
       wk.register({
