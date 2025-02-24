@@ -13,6 +13,8 @@ return {
 				"rust",
 				"jsdoc",
 				"bash",
+				"clojure",
+				"fennel",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
