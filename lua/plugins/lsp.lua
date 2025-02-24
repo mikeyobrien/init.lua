@@ -29,7 +29,7 @@ return {
 				formatters = {
 					stylua = {
 						-- necessary since come machines don't have access to glibc 2.28
-						command = vim.fn.exapand("~/.nix-profile/bin/stylua"),
+						command = vim.fn.expand("~/.nix-profile/bin/stylua"),
 					},
 				},
 				formatters_by_ft = {
