@@ -15,8 +15,11 @@ return {
     pcall(require("telescope").load_extension, "harpoon")
 
     local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Find Files" })
-    vim.keymap.set('n', '<leader>pF', builtin.git_files, { desc = "Git Files" })
+    vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = "Find Files" })
+    vim.keymap.set('n', '<leader>:', builtin.commands, { desc = "Commands" })
+    vim.keymap.set('n', '<leader>pf', builtin.git_files, { desc = "Git Files" })
+
+    vim.keymap.set('n', '<leader>bb', builtin.buffers, { desc = "Buffers" })
     vim.keymap.set('n', '<leader>pws', function()
       local word = vim.fn.expand("<cword>")
       builtin.grep_string({ search = word })
@@ -28,5 +31,5 @@ return {
     vim.keymap.set('n', '<leader>ps', builtin.live_grep, { desc = "Live Grep" })
     vim.keymap.set('n', '<leader>ph', builtin.help_tags, { desc = "Help Tags" })
     vim.keymap.set('n', '<leader>/', builtin.grep_string, { desc = "Grep String" })
-    end
+  end
 }
