@@ -7,9 +7,11 @@ return {
 			ensure_installed = {
 				"vimdoc",
 				"javascript",
+				"java",
 				"typescript",
 				"c",
 				"lua",
+				"nix",
 				"rust",
 				"jsdoc",
 				"bash",
