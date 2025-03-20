@@ -1,0 +1,2 @@
+-- This file is now managed by nvim-java plugin
+-- See the configuration in /local/home/mobrienv/.config/nvim/lua/plugins/work.lua
