@@ -1,0 +1,3 @@
+return {
+	"hylang/vim-hy",
+}
